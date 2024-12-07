@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Dịch Vụ</title>
+</head>
+<body>
+  <h1>Danh Sách Dịch Vụ</h1>
+  <ul>
+    <% services.forEach(service => { %>
+      <li>
+        <h3><%= service.name %></h3>
+        <p><%= service.description %></p>
+        <a href="/reservations/new?service_id=<%= service._id %>">Đặt chỗ</a>
+      </li>
+    <% }) %>
+  </ul>
+  <p><a href="/">Về trang chủ</a></p>
+</body>
+</html>

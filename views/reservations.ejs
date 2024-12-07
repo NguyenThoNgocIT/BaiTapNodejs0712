@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Đặt Chỗ</title>
+</head>
+<body>
+  <h1>Danh Sách Đặt Chỗ</h1>
+  <ul>
+    <% reservations.forEach(reservation => { %>
+      <li>
+        <p><%= reservation.service_id.name %> - <%= reservation.date %> - <%= reservation.time %> - <%= reservation.number_of_people %> người</p>
+        <form action="/reservations/<%= reservation._id %>?_method=DELETE" method="POST">
+          <button type="submit">Xóa đặt chỗ</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+  <p><a href="/">Về trang chủ</a></p>
+</body>
+</html>
